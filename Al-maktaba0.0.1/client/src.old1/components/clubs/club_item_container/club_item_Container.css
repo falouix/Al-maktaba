@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+.container_event{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.event_img{
+  width: 100%;
+  border-radius: 15px;
+}
+.Book-box-club{
+  margin: 10px;
+  width: 250px;
+  border-radius: 30px;
+  padding: 15px;
+  text-align: center;
+  background-color: #EDEDED;
+  box-shadow: 0px 0px 19px 5px rgba(233, 154, 154, 0.06);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+
+.Book-box-club h2{
+	font-size: 20px !important;
+    font-weight: bold;
+    color: black;
+    margin: 10px 0px;
+}
+
+.Book-box-club h3{
+	font-size: 16px !important;
+    color: #000000 !important;
+    font-weight: 700;
+	text-decoration: none;
+}
+
+h4{
+  font-size: 14px;
+  color: #004AAD;
+	position: relative;
+	margin-top: 10px;
+	margin-right: 145px;
+  margin-bottom: 10px;
+
+}
+
+p{
+  font-size: 20px;
+}
+
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact-box{
+		grid-template-columns: 1fr;
+	}
+	.left{
+		height: 39px;
+	}
+}
+.count_container{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+	margin: 50px 2px;
+
+}
+.logo_clob_img{
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #0712488c;
+
+}
+
+.thm-btn-club{
+	position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    backface-visibility: hidden;
+    background-color: #2848e7 !important;
+    color: var(--Engine-base, #ffffff);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 14px 35px;
+    transition: 500ms;
+    border-radius: 32px;
+    overflow: hidden;
+    margin: 5px;
+}
+a{
+	text-decoration: none !important;
+}

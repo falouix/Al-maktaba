@@ -1,0 +1,24 @@
+.login_container{
+    display : flex;
+}
+
+.login_form{
+    display: flex;
+    width: 50%;
+    align-content: space-between;
+    flex-direction: column;
+    padding: 75px;
+}
+.login_form input{
+    border : 0;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.login_form h1{
+    text-align: left;
+}
+
+.login_img{
+    border-radius: 0% 0% 100%;
+}
