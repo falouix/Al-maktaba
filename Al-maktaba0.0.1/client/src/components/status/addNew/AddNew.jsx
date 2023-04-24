@@ -42,6 +42,7 @@ const handleFileInputChange = (event) => {
 };
 // thing related to status_text
 const StatusTextChange =(event) =>{
+  console.log("event.target.value",event.target.value)
   setStatusText(event.target.value);
 }
 

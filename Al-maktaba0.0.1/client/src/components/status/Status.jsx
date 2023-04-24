@@ -1,9 +1,10 @@
-import react , {useState } from 'react';
+import react , {useState,useEffect } from 'react';
 import axios from 'axios';
 import './StatusPublication.css';
 import Modal from 'react-modal';
 import ProfilePic from '../../assets/ProfilePic.png';
 import Environment from '../../environment';
+import { TextField } from '@mui/material';
 let subtitle;
 const customStyles = {
   content: {
@@ -23,33 +24,56 @@ function Status(item) {
   const [modalIsOpen1, setIsOpen1] = useState(false);
   const [modalEditIsOpen, setmodalEditIsOpen] = useState(false);
   const [modalEditContent,setModalEditContent] = useState(<></>);
-  const [newText_status,setNewText_status]= useState();
+  const [NewText,setNewText]= useState('');
+  let  newText= "";
+
+//////// /////////////// ///////
+useEffect(() => {
+  //setNewText_status(item.item.text_status);
+  
+},[]);
+//////////////// ///////
   
 const handleTextChange = (event) => {
-  setNewText_status(event.target.value);
-  console.log(event.target.value)
+  setNewText(event.target.value)
+  newText=event.target.value;
 }
   // edit status stuff
   function closeModalEdit(){
     setmodalEditIsOpen(false);
   }
-   function  editStatus(){
+   const editStatus = ()=>{
     
     setmodalEditIsOpen(true);
     setModalEditContent(
       <div>
         <h4 className='modalEdith4'>Edition status</h4>
-        <textarea rows="6" className='modalEditextArea'  onChange={handleTextChange}/>
+        <p>{NewText}</p>
+        <input type="text"  className='modalEditextArea'    onChange={(event)=>{
+                event.preventDefault();
+                setNewText(event.target.value);
+             }}/>
         <button class="thm-btn" onClick={saveedit}><span>Enregistrer</span></button>
         <button class="thm-btn" onClick={closeModalEdit}><span>Cancel</span></button>
       </div>
       )
   }
   function saveedit(){
-    console.log("newText_status",newText_status)
     axios.post(Environment.api_url+'dashboard.php?action=update_status',{
       action : 'update_status',
-      newText_status  : newText_status,
+      newText_status  : NewText,
+      id_status : item.item.id_status,
+    }).then((res)=>{
+      console.log(res.data.success)
+      if(res.data.success){
+        item.setcounter1(item.counter1 + 1)
+        closeModalEdit()
+      }
+      })
+  }
+  function delete_status(){
+    axios.post(Environment.api_url+'dashboard.php?action=delete_status',{
+      action : 'update_status',
       id_status : item.item.id_status,
     }).then((res)=>{
       console.log(res.data.success)
@@ -63,7 +87,7 @@ const handleTextChange = (event) => {
 
 
   function openModal() {
-    closeModalEdit(true);
+    setIsOpen(true);
   }
  
   function openModal1() {
@@ -158,12 +182,11 @@ const handleTextChange = (event) => {
 				 <button class="thm-btn" onClick={openModal}><span>Comment</span></button>
          {JSON.parse(localStorage.getItem('user')).type=="admin"
          &&<button class="thm-btn" onClick={()=>{
-                                        setNewText_status(item.item.text_status);
                                         editStatus();
                                       }
          }><span>Edit</span></button>}
          {JSON.parse(localStorage.getItem('user')).type=="admin"
-         &&<button class="thm-btn" onClick={openModal}><span>Supprimer</span></button>}
+         &&<button class="thm-btn" onClick={delete_status}><span>Supprimer</span></button>}
         </div>
 		</div>
   )
