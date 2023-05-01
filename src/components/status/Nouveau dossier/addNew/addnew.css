@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+.blog_post {
+  background: #fff;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2rem rgb(0 0 0 / 12%);
+  position: relative;
+}
+.profile_img_addnew{
+  max-width: 82px;
+  border-radius: 100%;
+}
+.btns_container_add_new{
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.add_new_text_area{
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #bedafe;
+  padding: 7px;
+  box-shadow: inset 0px 0px 5px #00000019;
+
+}
+.btn_custom_close{
+  float: right;
+    padding: 2px 9px;
+}
+
+
+.container_copy {
+  padding: 6px;
+}
+
+.img_pod_add_new {
+  margin-top: 15px;
+  margin-left: 30px;
+  height: 80px;
+  width: 80px;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  z-index: 10;
+  border-radius: 100%;
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_add_new {
+  height: 6.2rem;
+  width: 6.2rem;
+  position: relative;
+  border-radius: 100%;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.sendb{
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+}
+
+
+.h3_addnew {
+  margin: 0 0 0.5rem 0;
+  color: #999;
+  font-size: 1.25rem;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+p {
+  margin: 0 0 4.5rem 0;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+
+
+
+/*input Field*/
+
+.input-field_addnew_addnew {
+  max-width: 350px;
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+  margin: -59px 78px;
+  height: 141px;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: -3px -34.6rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field_addnew i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field_addnew input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-field_addnew input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+
+
+
+
+
+/*costum Button*/ 
+
+.thm-btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  outline: none !important;
+  backface-visibility: hidden;
+  background-color: var(--Engine-primary, #FF414E);
+  color: var(--Engine-base, #ffffff);
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 5px;
+  padding: 1px 33px;
+  transition: 500ms;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.thm-btn:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(var(--Engine-black-rgb, 30, 30, 34), 1);
+  opacity: 0.1;
+  content: "";
+  border-radius: 32px;
+  transform: scale(1);
+  transition: 500ms ease;
+}
+
+.thm-btn:hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn:hover::before {
+  width: 100%;
+  opacity: 1;
+  transform: scale(1.5);
+  border-radius: 0;
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn span {
+  position: relative;
+}
+
+.thm-btn--dark {
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn--dark:hover::before,
+.thm-btn--dark::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn--dark:hover::before {
+  background-color: var(--Engine-primary, #FF414E);
+}
+
+.thm-btn--dark:hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn--dark--light-hover:hover::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn--dark--light-hover:hover {
+  color: var(--Engine-black, #1e1e22) !important;
+}

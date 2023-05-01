@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.listinger22 a{
+  text-decoration: none;
+font-family: poppins,sans-serif;
+font-size: 25px;
+font-weight: 700;
+color: #FF414E;
+}
+
+
+.listinger22 a:hover{
+  text-decoration: none;
+font-family: poppins,sans-serif;
+font-size: 25px;
+font-weight: 700;
+color: rgb(255, 177, 177);
+}
+
+.Clublist22 {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+.listinger22 li a {
+text-decoration: none;
+font-family: poppins,sans-serif;
+font-size: 20px;
+font-weight: 500;
+color: black;
+}
+.listinger22 li a:hover {
+  text-decoration: none;
+  font-family: poppins,sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: darkslategrey;
+  }

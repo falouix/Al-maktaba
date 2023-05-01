@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+.user-profile-header26 {
+  margin-top: 50px;
+  font-family: poppins, sans-serif;
+    background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
+    /* height: 230px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: inset 0px -2px 5px #00000045;
+    /* border-radius: 10px;*/
+    margin-bottom: 5px;
+    border-bottom: 1px solid red;
+}
+
+.avatar-container26 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar26 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name26 {
+  font-size: 30px;
+  margin: 0px 17px;
+}
+
+
+.profile-section26 {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.profile-description26 {
+  margin: 10px 0;
+}
+.profile-links26{
+  display: flex;
+    flex-direction: column;
+}
+.profile-links26 a {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #666;
+}
+.profile-links26 a i{
+  margin-right: 10px;
+}
+
+.profile-links26 a:hover {
+  color: #FF414E;
+}
+.profile-infos-name26{
+  margin: 0px 35px;
+}
+.profile-infos-name26 h5{
+  font-size: 12px;
+  margin: 0;
+  color: grey;
+}
+
+
+
+.profile-info26 h2{
+  margin: 0px;
+  }
+
+.nature-header26 {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nature-header26 h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+
+
+/*costum Button*/ 
+
+.thm-btn26 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  border: none;
+  outline: none !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: var(--Engine-primary, #FF414E);
+  color: var(--Engine-base, #ffffff);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 35px;
+  transition: 500ms;
+  border-radius: 32px;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.thm-btn26:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(var(--Engine-black-rgb, 30, 30, 34), 1);
+  opacity: 0.1;
+  content: "";
+  border-radius: 32px;
+  transform: scale(1);
+  transition: 500ms ease;
+}
+
+.thm-btn26:hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn26:hover::before {
+  width: 100%;
+  opacity: 1;
+  transform: scale(1.5);
+  border-radius: 0;
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn26 span {
+  position: relative;
+}
+
+.thm-btn26--dark {
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn26--dark:hover::before,
+.thm-btn26--dark::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn26--dark:hover::before {
+  background-color: var(--Engine-primary, #FF414E);
+}
+
+.thm-btn26--dark:hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn26--dark--light-hover:hover::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn26--dark--light-hover:hover {
+  color: var(--Engine-black, #1e1e22) !important;
+}
+.info_img_container{
+  display: flex;
+}
+
+.profileSideBar{
+  width: 300px;
+    border-right: 1px solid #ff414e;
+    padding: 13px;
+    box-shadow: inset 0px 0px 5px #00000066;
+    margin-top: -5px;
+    height: 100vh;
+}
+.profileMainContainerr{
+  display: flex;
+}
+.profileMainContainer{
+  width: 100%;
+}
+.profileMainContainerFavorites{
+  
+  padding: 15px;
+}
+.profileMainContainerFavorites h3{
+  font-weight: bold;
+}
+
+
+
+@media(max-width:768px){
+
+.user-profile-header26 {
+  margin-top: 45px;
+  font-family: poppins, sans-serif;
+  background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
+  /* height: 230px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: inset 0px -2px 5px #00000045;
+  /* border-radius: 10px; */
+  margin-bottom: 5px;
+  border-bottom: 1px solid red;
+  align-items: center;
+}
+
+.info_img_container{
+  margin-top: 10px;
+}
+
+.profileSideBar
+{
+  display: none;
+}
+}
