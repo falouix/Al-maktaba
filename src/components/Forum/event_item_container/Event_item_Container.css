@@ -1,0 +1,131 @@
+
+
+.forum-card {
+    background-color: #ededed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+	margin: 6px;
+    padding: 10px;
+  }
+  
+
+  .avatar-container32 {
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .avatar32 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+
+
+  .forum-content {
+    flex-grow: 1;
+  }
+  
+  .forum-content h1 {
+    margin-bottom: 5px;
+    font-size: 30px;
+  }
+  
+.forum-content a{
+    font-family: poppins,sans-serif;
+    text-decoration: none;
+    color: #FF414E;
+}
+
+.forum-content a:hover{
+    text-decoration: none;
+    color: #96010b;
+}
+
+
+  .forum-content h2 {
+    font-family: poppins,sans-serif;
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .metadataforum {
+    text-align: right;
+  }
+
+  .metadataforum h2{
+    font-family: poppins,sans-serif;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .metadataforum h1{
+    font-family: poppins,sans-serif;
+    margin: 0;
+    font-size: 20px;
+    color: gray;
+  }
+  
+  .forum-content h3 {
+    font-family: poppins,sans-serif;
+    margin: 0;
+    font-size: 18px;
+  }
+  
+
+  .info31 {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .info31 h2{
+    padding-right: 10px;
+  }
+
+  .info31 img{
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .forum-content span{
+    color: gray;
+  }
+
+
+
+  @media screen and (max-width: 600px){
+    .forum-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        align-items: center;
+      }
+      .forum-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .metadataforum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .metadataforum h2{
+        margin-top: 20px;
+    }
+    .metadataforum h3{
+        margin:5px;
+    }
+  }

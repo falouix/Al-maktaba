@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+
+
+
+.Big_Container {
+  display: flex;
+  background-color: #EDEDED;
+  padding: 5px;
+  height: 94vh;
+}
+
+
+.Friends_Search_Box {
+  height: 50px;
+  width: 200px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+
+.Friends_Search_Box:hover {
+  border-color: #FF414E;
+}
+
+
+
+.frinds_list_Container {
+  display: flex;
+  margin: 5px;
+  background-color: white;
+  border: #333;
+  width: 20%;
+  border-radius: 12px 0px 0px 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.profilesList {
+  display: flex;
+  margin-top: 15px;
+  background-color: white;
+  width: 100%;
+  border-radius: 12px;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.profile-pub55 {
+  border-radius: 30px;
+  border-bottom: 1px solid #004aad;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+}
+
+.profile-pub55:hover {
+
+  box-shadow: 0px 0px 3px;
+}
+
+@media(max-width:1255px) {
+  .thm-btn55 {
+    /* position: relative; */
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* -webkit-appearance: none; */
+    border: none;
+    /* outline: none !important; */
+    backface-visibility: hidden;
+    background-color: var(--Engine-primary, #FF414E);
+    color: var(--Engine-base, #ffffff);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 20px 3px;
+    transition: 500ms;
+    border-radius: 50%;
+    /* overflow: hidden; */
+    /* margin-bottom: 10px;*/
+  }
+
+  .frinds_list_Container {
+    display: flex !important;
+    margin: 5px !important;
+    background-color: white !important;
+    border: #333 !important;
+    width: 100% !important;
+    border-radius: 12px 0px 0px 12px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    transition: all .5s !important;
+    position: fixed !important;
+    height: 100vh !important;
+    left: -100% !important;
+    margin: 0 !important;
+    /* top: 0;*/
+  }
+
+  .frinds_list_Container.show {
+    left: 0 !important;
+  }
+
+  .Send_Message textarea {
+    /* margin-right: 10px; */
+    padding: 9px;
+    font-size: 15px;
+    height: 100%;
+    border-radius: 12px;
+    border-color: red;
+  }
+}
+
+.profile-pub55 {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.profile-pub-pic55 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.profile-pub55 span {
+  font-family: poppins, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+/*Right Side*/
+.Right_Chat_Container {
+  width: 80%;
+}
+
+.name_and_status {
+  display: flex;
+  flex-direction: column;
+}
+
+.Active_Chat_Username_and_Messages {
+  height: 9%;
+  display: flex;
+  margin: 5px;
+  background-color: white;
+  border-radius: 0px 12px 0px 0px;
+  align-items: center;
+  padding: 5px;
+}
+
+.Messages_Container {
+  font-size: 15px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 78%;
+  display: flex;
+  margin: 5px;
+  background-color: white;
+  border-radius: 0px 0px 0px 0px;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.Send_Message {
+  height: 10%;
+  display: flex;
+  margin: 5px;
+  background-color: white;
+  border-radius: 0px 0px 12px 0px;
+  padding: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Messaging_box {
+  width: 90%;
+}
+
+.Send_Message textarea {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 15px;
+  height: 50px;
+  border-radius: 12px;
+  border-color: red;
+}
+
+
+.Messaging_Button {
+  height: 50px;
+  width: 8%;
+}
+
+
+
+
+
+
+/*costum Button*/
+
+.thm-btn55 {
+  /*position: relative; */
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+  /* -webkit-appearance: none; */
+  border: none;
+  /* outline: none !important; */
+  backface-visibility: hidden;
+  background-color: var(--Engine-primary, #FF414E);
+  color: var(--Engine-base, #ffffff);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 7px 22px;
+  transition: 500ms;
+  border-radius: 32px;
+  /* overflow: hidden; */
+  /* margin-bottom: 10px;*/
+}
+
+.thm-btn55 :before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 100%;
+  background-color: rgba(var(--Engine-black-rgb, 30, 30, 34), 1);
+  opacity: 0.1;
+  content: "";
+  border-radius: 32px;
+  transform: scale(1);
+  transition: 500ms ease;
+}
+
+.thm-btn55 :hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn55 :hover::before {
+  width: 100%;
+  opacity: 1;
+  transform: scale(1.5);
+  border-radius: 0;
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn55 span {
+  position: relative;
+}
+
+.thm-btn55 --dark {
+  background-color: var(--Engine-black, #1e1e22);
+}
+
+.thm-btn55 --dark:hover::before,
+.thm-btn55 --dark::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn55 --dark:hover::before {
+  background-color: var(--Engine-primary, #FF414E);
+}
+
+.thm-btn55 --dark:hover {
+  color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn55 --dark--light-hover:hover::before {
+  background-color: var(--Engine-base, #ffffff);
+}
+
+.thm-btn55 --dark--light-hover:hover {
+  color: var(--Engine-black, #1e1e22) !important;
+}
+
+
+.Friends_Search_Container {
+  width: 100%;
+}
+
+.Friends_Search_Container input {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 10px auto;
+}
+
+.Dashboard_con {
+  margin-top: 50px;
+}
+
+.Active_Header {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  color: #00ac00;
+  font-size: 16px;
+
+}
+
+
+.Message_Container_left {
+  margin: 5px;
+  display: flex;
+}
+
+.Message_Container_right {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+@keyframes example {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.Chat_Messages_Left {
+  background-color: #EDEDED;
+  padding: 5px;
+  margin: 1px;
+  border-radius: 12px;
+  float: left;
+  width: 100%;
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+
+.msgNotifspan {
+  position: absolute;
+  left: 28px;
+  background: red;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 50%;
+  color: white;
+
+}
+
+.Chat_Messages_Right {
+  border-radius: 12px !important;
+  background-color: #FF414E;
+  padding: 5px;
+  border-radius: 12px;
+  float: right;
+  width: 100%;
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+
+.flex_Message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#checkfriends {
+  display: None;
+}
+
+.checkbtnfriends {
+  display: none;
+}
+
+
+
+@media(max-width:1255px) {
+  .frinds_list_Container {
+    display: none;
+  }
+
+
+  .checkbtnfriends {
+    margin-top: 10px;
+    display: block;
+  }
+
+
+  .Right_Chat_Container {
+    width: 100%;
+  }
+
+
+
+
+  /*usercard checkbox*/
+
+
+  .checkfriends {
+    display: block;
+  }
+
+  .frinds_list_Container {
+    display: flex;
+    margin: 5px;
+    background-color: white;
+    border: #333;
+    width: 20%;
+    border-radius: 12px 0px 0px 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all .5s;
+
+  }
+
+  #checkfriends:checked~#friends_list {
+    left: 0;
+  }
+}

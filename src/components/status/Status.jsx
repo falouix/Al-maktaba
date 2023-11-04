@@ -1,10 +1,11 @@
-import react , {useState,useEffect } from 'react';
+import react, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './StatusPublication.css';
 import Modal from 'react-modal';
 import ProfilePic from '../../assets/ProfilePic.png';
 import Environment from '../../environment';
 import { TextField } from '@mui/material';
+import Comments from "./comments/Comments"
 let subtitle;
 const customStyles = {
   content: {
@@ -14,39 +15,59 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    height: 'auto' ,
-    width : 'auto' ,
-    background : 'trensparent',
-    padding : "0"
-    
+    height: 'auto',
+    width: 'auto',
+    background: 'white',
+    padding: "5px"
+
   },
 };
+
+const Commentstyle = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    marginTop: '20px',
+    transform: 'translate(-50%, -50%)',
+    height: 'auto',
+    width: '90%',
+    background: 'white',
+    padding: "5px"
+
+  },
+};
+
+
+
 Modal.setAppElement('#root');
 function Status(item) {
   //console.log(item.item)
-  const [tst,settst]= useState('');
+  const [tst, settst] = useState('');
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalIsOpen1, setIsOpen1] = useState(false);
   const [modalEditIsOpen, setmodalEditIsOpen] = useState(false);
-  const [modalEditContent,setModalEditContent] = useState(<></>);
-  const [newText,setNewText]= useState('');
+  const [modalEditContent, setModalEditContent] = useState(<></>);
+  const [newText, setNewText] = useState('');
 
-//////// /////////////// ///////
-useEffect(() => {
-  //setNewText_status(item.item.text_status);
-  
-},[]);
-//////////////// ///////
-  
-const handleTextChange = (event) => {
-  settst(event.target.value)
-}
-// edit status stuff
-function closeModalEdit(){
-  console.log('closeModalEdit',tst)
-  setmodalEditIsOpen(false);
-}
-   const editStatus = ()=>{
+  //////// /////////////// ///////
+  useEffect(() => {
+    //setNewText_status(item.item.text_status);
+
+  }, []);
+  //////////////// ///////
+
+  const handleTextChange = (event) => {
+    settst(event.target.value)
+  }
+  // edit status stuff
+  function closeModalEdit() {
+    console.log('closeModalEdit', tst)
+    setmodalEditIsOpen(false);
+  }
+  const editStatus = () => {
     setmodalEditIsOpen(true);
     setModalEditContent(
       <div>
@@ -54,41 +75,41 @@ function closeModalEdit(){
         <p className="margin_0 status_text_p">
           {item.item.text_status}
         </p>
-        <input type="text"  
-                className='modalEditextArea'  onChange={(event)=>{
-                  handleTextChange(event)
-             }}/>
-        
+        <input type="text"
+          className='modalEditextArea' onChange={(event) => {
+            handleTextChange(event)
+          }} />
+
         <button className="thm-btn" onClick={saveedit}><span>Enregistrer</span></button>
         <button className="thm-btn" onClick={closeModalEdit}><span>Cancel</span></button>
       </div>
-      )
+    )
   }
-  function saveedit(){
+  function saveedit() {
     let data = {
-        action : 'update_status',
-        newText_status  : tst, 
-        id_status : item.item.id_status,
-      }
-      console.log("dataa", data)
-    axios.post(Environment.api_url+'dashboard.php?action=update_status',data).then((res)=>{
+      action: 'update_status',
+      newText_status: tst,
+      id_status: item.item.id_status,
+    }
+    console.log("dataa", data)
+    axios.post(Environment.api_url + 'dashboard.php?action=update_status', data).then((res) => {
       console.log(res.data.success)
-      if(res.data.success){
+      if (res.data.success) {
         item.setcounter1(item.counter1 + 1)
       }
-      })
+    })
   }
-  function delete_status(){
-    axios.post(Environment.api_url+'dashboard.php?action=delete_status',{
-      action : 'update_status',
-      id_status : item.item.id_status,
-    }).then((res)=>{
+  function delete_status() {
+    axios.post(Environment.api_url + 'dashboard.php?action=delete_status', {
+      action: 'update_status',
+      id_status: item.item.id_status,
+    }).then((res) => {
       console.log(res.data.success)
-      if(res.data.success){
+      if (res.data.success) {
         item.setcounter1(item.counter1 + 1)
         closeModalEdit()
       }
-      })
+    })
   }
   // edit just ends here
 
@@ -96,7 +117,7 @@ function closeModalEdit(){
   function openModal() {
     setIsOpen(true);
   }
- 
+
   function openModal1() {
     setIsOpen1(true);
   }
@@ -115,37 +136,33 @@ function closeModalEdit(){
     setIsOpen1(false);
   }
   let fileContent;
-  if(item.item.status_type == 'jpg' || item.item.status_type == 'jpeg'|| item.item.status_type == 'png'|| item.item.status_type == 'gif'|| item.item.status_type == 'webp'){
-    fileContent = <button onClick={openModal1}><img 
-    src={"https://www.apialmaktaba.inspira-jendouba.org/almaktaba_api/"+item.item.file_dir} 
-    className='img_status_dashboard' />
-      </button>
+  if (item.item.status_type == 'jpg' || item.item.status_type == 'jpeg' || item.item.status_type == 'png' || item.item.status_type == 'gif' || item.item.status_type == 'webp') {
+    fileContent = <button onClick={openModal1}><img
+      src={Environment.api_url + item.item.file_dir}
+      className='img_status_dashboard' />
+    </button>
 
-  }  if(item.item.status_type == 'pdf'){
-    fileContent =<iframe 
-    id="if1" 
-    width="100%" 
-    height="400"  
-    src={"https://www.apialmaktaba.inspira-jendouba.org/almaktaba_api/"+item.item.file_dir}>
+  } if (item.item.status_type == 'pdf') {
+    fileContent = <iframe
+      id="if1"
+      width="100%"
+      height="400"
+      src={Environment.api_url + item.item.file_dir}>
     </iframe>
 
   }
- 
-  return(
-		<div className="Book-box margin_top_10">
-       <Modal
+
+  return (
+    <div className="Book-box margin_top_10">
+      <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={Commentstyle}
         contentLabel="Example Modal"
         appElement={document.getElementById('app')}
       >
-        <h1 className='p_comment_h1'>comments</h1>
-        <p className='p_comment_text'><img src={ProfilePic} className='avatar_img'/><span className='p_comment_span'>User Name : </span>test comments</p>
-        <p className='p_comment_text'><img src={ProfilePic} className='avatar_img'/><span className='p_comment_span'>User Name : </span>test comments test comments</p>
-        <input type="text" className='comment_input' placeholder='ajouter votre commentaire' />
-        <button className="thm-btn margin_top_5 p_comment_btn"><span>commenter</span></button>
+        <Comments item={item.item} />
       </Modal>
       <Modal
 
@@ -156,10 +173,10 @@ function closeModalEdit(){
         contentLabel="Example Modal"
         appElement={document.getElementById('app')}
       >
-        
-        <button className='close_btn' onClick={()=>{closeModal1()}}>x</button>
-        <img 
-         src={"https://www.apialmaktaba.inspira-jendouba.org/almaktaba_api/"+item.item.file_dir} 
+
+        <button className='close_btn' onClick={() => { closeModal1() }}>x</button>
+        <img
+          src={Environment.api_url + item.item.file_dir}
           className='img_status_dashboard custom_img' />
       </Modal>
 
@@ -171,47 +188,47 @@ function closeModalEdit(){
         contentLabel="Example Modal"
         appElement={document.getElementById('app')}
       >
-         
-      <div>
-        <h4 className='modalEdith4'>Edition status</h4>
-        <p className="margin_0 status_text_p">
-          {item.item.text_status}
-        </p>
-        <input type="text"  
-                className='modalEditextArea'  onChange={(event)=>{
-                  console.log(event.target.value)
-                  handleTextChange(event)
-             }}/>
-        
-        <button className="thm-btn" onClick={saveedit}><span>Enregistrer</span></button>
-        <button className="thm-btn" onClick={closeModalEdit}><span>Cancel</span></button>
-      </div>
+
+        <div>
+          <h4 className='modalEdith4'>Edition status</h4>
+          <p className="margin_0 status_text_p">
+            {item.item.text_status}
+          </p>
+          <input type="text"
+            className='modalEditextArea' onChange={(event) => {
+              console.log(event.target.value)
+              handleTextChange(event)
+            }} />
+
+          <button className="thm-btn" onClick={saveedit}><span>Enregistrer</span></button>
+          <button className="thm-btn" onClick={closeModalEdit}><span>Cancel</span></button>
+        </div>
       </Modal>
-      
+
       <div className="status_btn_container">
-        <div className='avatar_img_container'>
-          <img src={ProfilePic} className='avatar_img'/>
-          <h4 className='h4_status'>{item.item.login_student}</h4>
+        <div className='avatar_img_container' onClick={() => item.openProfile(item.item.id_students)}>
+          <img src={ProfilePic} className='avatar_img' />
+          <h4 className='h4_status' >{item.item.login_student}</h4>
         </div>
-			</div>
-      
-      
+      </div>
+
+
       <p className="margin_0 status_text_p">
-          {item.item.text_status}
-        </p>
-        {fileContent}
-      <h4 className='h4_status time_post'>{item.item.date}</h4> 
-        <div className='btn_comment_container'>
-				 <button className="thm-btn" onClick={openModal}><span>Comment</span></button>
-         {JSON.parse(localStorage.getItem('user')).type=="admin"
-         &&<button className="thm-btn" onClick={()=>{
-                                        editStatus();
-                                      }
-         }><span>Edit</span></button>}
-         {JSON.parse(localStorage.getItem('user')).type=="admin"
-         &&<button className="thm-btn" onClick={delete_status}><span>Supprimer</span></button>}
-        </div>
-		</div>
+        {item.item.text_status}
+      </p>
+      {fileContent}
+      <h4 className='h4_time_status time_post'>{item.item.date}</h4>
+      <div className='btn_comment_container'>
+        <button className="thm-btn" onClick={openModal}><span>Comment</span></button>
+        {JSON.parse(localStorage.getItem('user')).type == "admin"
+          && <button className="thm-btn" onClick={() => {
+            editStatus();
+          }
+          }><span>Edit</span></button>}
+        {JSON.parse(localStorage.getItem('user')).type == "admin"
+          && <button className="thm-btn" onClick={delete_status}><span>Supprimer</span></button>}
+      </div>
+    </div>
   )
 }
 

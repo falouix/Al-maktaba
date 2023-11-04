@@ -4,16 +4,16 @@
 .user-profile-header26 {
   margin-top: 50px;
   font-family: poppins, sans-serif;
-    background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
-    /* height: 230px; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-    box-shadow: inset 0px -2px 5px #00000045;
-    /* border-radius: 10px;*/
-    margin-bottom: 5px;
-    border-bottom: 1px solid red;
+  background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
+  /* height: 230px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: inset 0px -2px 5px #00000045;
+  /* border-radius: 10px;*/
+  margin-bottom: 5px;
+  border-bottom: 1px solid red;
 }
 
 .avatar-container26 {
@@ -45,10 +45,12 @@
 .profile-description26 {
   margin: 10px 0;
 }
-.profile-links26{
+
+.profile-links26 {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
+
 .profile-links26 a {
   text-decoration: none;
   display: inline-block;
@@ -56,17 +58,20 @@
   font-size: 1.5em;
   color: #666;
 }
-.profile-links26 a i{
+
+.profile-links26 a i {
   margin-right: 10px;
 }
 
 .profile-links26 a:hover {
   color: #FF414E;
 }
-.profile-infos-name26{
+
+.profile-infos-name26 {
   margin: 0px 35px;
 }
-.profile-infos-name26 h5{
+
+.profile-infos-name26 h5 {
   font-size: 12px;
   margin: 0;
   color: grey;
@@ -74,9 +79,9 @@
 
 
 
-.profile-info26 h2{
+.profile-info26 h2 {
   margin: 0px;
-  }
+}
 
 .nature-header26 {
   display: flex;
@@ -90,7 +95,7 @@
 
 
 
-/*costum Button*/ 
+/*costum Button*/
 
 .thm-btn26 {
   position: relative;
@@ -166,58 +171,147 @@
 .thm-btn26--dark--light-hover:hover {
   color: var(--Engine-black, #1e1e22) !important;
 }
-.info_img_container{
+
+.info_img_container {
   display: flex;
 }
 
-.profileSideBar{
+.profileSideBar {
   width: 300px;
-    border-right: 1px solid #ff414e;
-    padding: 13px;
-    box-shadow: inset 0px 0px 5px #00000066;
-    margin-top: -5px;
-    height: 100vh;
+  border-right: 1px solid #ff414e;
+  padding: 13px;
+  box-shadow: inset 0px 0px 5px #00000066;
+  margin-top: -5px;
+  height: 100vh;
 }
-.profileMainContainerr{
+
+.profileMainContainerr {
   display: flex;
 }
-.profileMainContainer{
+
+.profileMainContainerr input {
+  display: none;
+}
+
+.profileMainContainer {
   width: 100%;
 }
-.profileMainContainerFavorites{
-  
+
+.profileMainContainerFavorites {
+
   padding: 15px;
 }
-.profileMainContainerFavorites h3{
+
+.profileMainContainerFavorites h3 {
   font-weight: bold;
 }
 
 
 
-@media(max-width:768px){
 
-.user-profile-header26 {
-  margin-top: 45px;
-  font-family: poppins, sans-serif;
-  background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
-  /* height: 230px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  box-shadow: inset 0px -2px 5px #00000045;
-  /* border-radius: 10px; */
-  margin-bottom: 5px;
-  border-bottom: 1px solid red;
-  align-items: center;
-}
-
-.info_img_container{
-  margin-top: 10px;
-}
-
-.profileSideBar
-{
+.checkfastmenubtn {
+  font-size: 15px;
+  color: #004AAD;
+  cursor: pointer;
+  margin-left: 10px;
   display: none;
 }
+
+
+@media(max-width:768px) {
+
+
+  .profileMainContainerr {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .listinger22 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .listinger22 a {
+    margin-bottom: 20px;
+  }
+
+
+  .Clublist22 li a {
+    display: block !important;
+  }
+
+  .checkfastmenubtn {
+    display: block;
+  }
+
+
+  .checkfastmenu {
+    display: block;
+  }
+
+  .profileSideBar {
+    position: fixed;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    top: 48px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+
+
+  #checkfastmenu:checked~#idprofileSideBar {
+    left: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .user-profile-header26 {
+    margin-top: 45px;
+    font-family: poppins, sans-serif;
+    background: linear-gradient(to bottom, #DBDBDB, #dbdbdb00);
+    /* height: 230px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: inset 0px -2px 5px #00000045;
+    /* border-radius: 10px; */
+    margin-bottom: 5px;
+    border-bottom: 1px solid red;
+    align-items: center;
+  }
+
+  .info_img_container {
+    margin-top: 10px;
+  }
+
+
+}
+
+.sendMsgTextarea {
+  width: 100%;
+  height: 300px;
+  padding: 16px;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 5px #00000061;
 }

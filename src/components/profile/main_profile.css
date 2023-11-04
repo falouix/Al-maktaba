@@ -41,3 +41,8 @@ color: black;
   font-weight: 700;
   color: darkslategrey;
   }
+  .filesListContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+

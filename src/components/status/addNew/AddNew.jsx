@@ -64,7 +64,6 @@ const StatusTextChange =(event) =>{
         return ;
       }
 
-      console.log('selectedFile', typeof selectedFile);
               try { await axios.post(Environment.api_url+"dashboard.php",
           {
             action : 'creat_status',
@@ -74,7 +73,7 @@ const StatusTextChange =(event) =>{
           }
         )
           .then(async res => {
-            console.log(res.data)
+            setStatusText('');
                 const formData = new FormData();
                 formData.append("selectedFile", selectedFile);
                 if(selectedFile !=undefined){
@@ -90,14 +89,13 @@ const StatusTextChange =(event) =>{
                   }
                  )
                    .then(res => {
-                     console.log(res.data);
+                     
                      setSelectedFile(null);
                      setStatusText('');
                      setProgress1(0);
                      counter1.setcounter1(counter1.counter1+1)
                      if(res.data == 'success'){
                          console.log(res.data)
-                         
                      }
                    })
                 }else{

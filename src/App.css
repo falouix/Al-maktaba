@@ -32,36 +32,115 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-button{
+
+button {
   cursor: pointer;
 }
-.status_container{
+
+.status_container {
   width: 100%;
   padding: 5px 110px;
 }
-.margin_0{
-  margin : 0;
+
+.margin_0 {
+  margin: 0;
 }
-.custom_login_container{
+
+.custom_login_container {
   max-width: 100% !important;
   margin: 0 !important;
 }
-.panel{
- box-shadow: none !important;
+
+.panel {
+  box-shadow: none !important;
 }
-#searchfiles_container label{
+
+#searchfiles_container label {
   z-index: 0;
 }
 
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.status_container{
+  .status_container {
+    width: 100%;
+    padding: 0px 0px
+  }
+}
+
+.add_status_container {
+  /*border: 1px solid; */
+  margin: 7px;
+  border-bottom: 5px solid red;
+  border-radius: 0px 5px 108px;
+  padding: 10px;
+  box-shadow: inset -2px -2px 5px #00000036;
+  margin-left: 0;
   width: 100%;
-  padding: 0px 0px
+}
 
-}}
+.h3_main_page_events {
+  /* background: #ff000014; */
+  margin-left: 4px;
+  margin-bottom: -36px !important;
+  /* text-align: center; */
+  font-size: 16px;
+  /* border: 1px SOLID; */
+  color: #000000;
+  width: fit-content;
+  padding: 5px 38px;
+  /* color: white; */
+  border-radius: 6px 34px 0px 0px;
+}
+
+#searchfiles_container {
+  /* margin-top: 15px; */
+  width: 50% !important;
+  margin-left: 4px;
+  /* border: 1px solid; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #00000021;
+}
+
+.dashboard_main {
+  width: 89% !important;
+  overflow-y: hidden;
+}
+
+@media(max-width:768px) {
+
+  .dashboard_main {
+    width: 100% !important;
+  }
+
+  #searchfiles_container {
+    margin-top: 15px;
+    width: 95% !important;
+    text-align: center;
+    margin: 14px;
+  }
+
+}
+
+.Book-box {
+  border: 1px solid #004aad21 !important;
+}
+
+.Book_container .swiper {
+  z-index: 0 !important;
+  width: 97% !important;
+  overflow-y: hidden;
+}
+
+.Book_container {
+  overflow-y: hidden !important;
+}
+
+.dashboard_main {
+  overflow-x: hidden;
+}
