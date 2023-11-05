@@ -94,8 +94,8 @@ function Event() {
       action: 'get'
     }).then((res) => {
       res.data.events.forEach((key, value) => {
-        console.log('key.event', key.event)
-        items.push(key.event)
+        console.log('key.event', key)
+        items.push(key)
       })
       setAllEvents(items)
     })
@@ -241,24 +241,15 @@ function Event() {
                 0: {
                   slidesPerView: 1,
                 },
-                768: {
+                1080: {
                   slidesPerView: 3,
                 },
-                400: {
+                768: {
                   slidesPerView: 2,
                 },
                 390: {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                 },
-                375: {
-                  slidesPerView: 2,
-                },
-                360: {
-                  slidesPerView: 2,
-                },
-                280: {
-                  slidesPerView: 2,
-                }
               }}
 
             >
@@ -270,7 +261,7 @@ function Event() {
                   return (
                     <SwiperSlide>
                       <button key={value} onClick={() => openModal(key)} className="btn_open">
-                        <Event_item_Container data={key} />
+                        <Event_item_Container data={value} />
                       </button>
                     </SwiperSlide>
                   )

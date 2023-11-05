@@ -11,11 +11,12 @@ function EventItemContainer(data) {
                 <div className='Book-box-event-header'>
 
                     <a href="#">
-                        <img src={Environment.api_url + data.data.file_dir} alt="random image" className="event_img" />
+                        <img src={data && data.file_dir ? Environment.api_url + data.file_dir : null} alt="random image" className="event_img" />
+
                     </a>
                 </div>
                 <h3 className='Book-box-event-h3'>{data.data.name_event}</h3>
-                <h3 className='h3_event_item'>{data.data.name_event}</h3>
+                <h3 className='h3_event_item'>{data.name_event}</h3>
             </div>
             {JSON.parse(localStorage.getItem('user')).type == "admin"
                 && <button className="thm-btn" ><span>Edit</span></button>}
