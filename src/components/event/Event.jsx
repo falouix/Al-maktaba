@@ -261,7 +261,7 @@ function Event() {
                   return (
                     <SwiperSlide>
                       <button key={value} onClick={() => openModal(key)} className="btn_open">
-                        <Event_item_Container data={value} />
+                        <Event_item_Container data={key.event} />
                       </button>
                     </SwiperSlide>
                   )
